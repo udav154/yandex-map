@@ -3,5 +3,5 @@ import Image from './images'
 
 export default {
     Icon,
-    Image,
+    Image,  
 }
