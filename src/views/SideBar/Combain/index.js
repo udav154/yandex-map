@@ -9,25 +9,26 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { mainListItems, secondaryListItems } from '../SideBarViews';
 
 
-const drawerWidth = 530;
+
+
 
 const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
-  ({ theme, open }) => ({
+  ({ theme, open,  drawerWidth }) => ({
     '& .MuiDrawer-paper': {
-      position: 'relative',
+      position: "absolute",
       whiteSpace: 'nowrap',
-      width: drawerWidth,
       transition: theme.transitions.create('width', {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.enteringScreen,
       }),
+      width: drawerWidth,
       boxSizing: 'border-box',
       ...(!open && {
-        overflowX: 'hidden',
         transition: theme.transitions.create('width', {
           easing: theme.transitions.easing.sharp,
           duration: theme.transitions.duration.leavingScreen,
         }),
+        overflowX: 'hidden',
         width: theme.spacing(7),
         [theme.breakpoints.up('sm')]: {
           width: theme.spacing(9),
@@ -38,15 +39,10 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 
-const SideBar = ({ ...props }) => {
-
-  const [open, setOpen] = React.useState(true);
-  const toggleDrawer = () => {
-    setOpen(!open);
-  };
+const SideBar = ({ children,  open, setOpen, toggleDrawer,  drawerWidth, ...props }) => {
 
   return (
-    <Drawer variant="permanent" open={open}>
+    <Drawer variant="permanent" drawerWidth={drawerWidth} open={open}>
       <Toolbar
         sx={{
           display: 'flex',

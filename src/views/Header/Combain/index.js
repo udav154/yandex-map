@@ -10,12 +10,10 @@ import Badge from '@mui/material/Badge';
 import MenuIcon from '@mui/icons-material/Menu';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 
-const drawerWidth = 530;
-const mdTheme = createTheme();
 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
-})(({ theme, open }) => ({
+})(({ theme, open , drawerWidth   }) => ({
   zIndex: theme.zIndex.drawer + 1,
   transition: theme.transitions.create(['width', 'margin'], {
     easing: theme.transitions.easing.sharp,
@@ -31,18 +29,16 @@ const AppBar = styled(MuiAppBar, {
   }),
 }));
 
-const Header = ({ children, ...props }) => {
 
-  const [open, setOpen] = React.useState(true);
-  const toggleDrawer = () => {
-    setOpen(!open);
-  };
+const Header = ({ children, open, setOpen, toggleDrawer, drawerWidth, headerHeight, ...props }) => {
+  
+  const mdTheme = createTheme();
 
   return (
     <ThemeProvider theme={mdTheme}>
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
-        <AppBar position="absolute" open={open}>
+        <AppBar position="absolute" drawerWidth={drawerWidth} headerHeight = {headerHeight} open={open}>
           <Toolbar
             sx={{
               pr: '24px', // keep right padding when drawer closed

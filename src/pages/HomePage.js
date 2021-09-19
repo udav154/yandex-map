@@ -8,9 +8,9 @@ const HomePage = ({ ...props }) => {
   return (
     <Layout >
       {() => {
-         return (
-           <div>WELCOME HOME PAGE</div>
-         ) 
+         return (<>
+          {/* //  <div>WELCOME HOME PAGE</div> */}
+         </>) 
       }}
     </Layout>
 
