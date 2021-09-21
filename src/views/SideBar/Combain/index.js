@@ -60,6 +60,7 @@ const SideBar = ({ children,  open, setOpen, toggleDrawer,  drawerWidth, ...prop
       <Divider />
       <List>{secondaryListItems}</List>
     </Drawer>
+      
   )
 }
 
