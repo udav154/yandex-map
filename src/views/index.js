@@ -20,11 +20,6 @@ const Layout = ({ children, ...props }) => {
   }
   return (
     <>
-      <Helmet>
-        {/* <script src="https://api-maps.yandex.ru/2.1/?apikey=fd8e035c-672c-40c6-bafc-bf89cfb1e94e&lang=ru_RU" type="text/javascript"></script>
-        <script src="mapbasics.js" type="text/javascript"></script> */}
-        {/* <script src="https://api-maps.yandex.ru/2.0-stable/?apikey=fd8e035c-672c-40c6-bafc-bf89cfb1e94e&load=package.full&lang=ru-RU" type="text/javascript"></script> */}
-      </Helmet>
 
       <Header  {...requareProperty} >
       <SideBar   {...requareProperty} />
